@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flow Free</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1f1f1f; /* Fondo oscuro */
+            color: #ffffff; /* Texto blanco */
+            font-family: Arial, sans-serif; /* Tipo de letra */
+            position: relative; /* Establecer posición relativa para alinear el título */
+        }
+
+        h1 {
+            text-align: center;
+            position: absolute; /* Posición absoluta para mover el título */
+            top: 20px; /* Distancia desde arriba */
+            left: 50%; /* Alinear horizontalmente */
+            transform: translateX(-50%); /* Centrar horizontalmente */
+            z-index: 1; /* Colocar el título sobre el tablero */
+        }
+
+        .board {
+            margin-top: 50px; /* Espacio entre el título y el tablero */
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, 60px); /* 5 columnas de 60px cada una */
+            grid-template-rows: repeat(5, 60px); /* 5 filas de 60px cada una */
+            gap: 5px; /* Espacio entre las celdas */
+            width: 320px; /* Ancho total del tablero */
+            height: 320px; /* Altura total del tablero */
+            border: 2px solid #444; /* Borde del tablero */
+            border-radius: 10px; /* Borde redondeado */
+            background-color: #333; /* Color de fondo del tablero */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+        }
+
+        .dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: background-color 0.3s ease; /* Transición de color al pasar el ratón */
+        }
+
+        .dot:hover {
+            background-color: #555; /* Cambio de color al pasar el ratón */
+        }
+
+        .line {
+            position: absolute;
+            background-color: #777; /* Color de las líneas */
+            pointer-events: none;
+            z-index: -1;
+            transition: background-color 0.3s ease; /* Transición de color al pasar el ratón */
+        }
+
+        .line:hover {
+            background-color: #999; /* Cambio de color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <div class="board" id="board"></div>
+    <h1>Flow Free</h1>
+
+    <script src="flowfree.js"></script>
+</body>
+</html>
+
